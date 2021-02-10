@@ -1,5 +1,5 @@
 ## URL Shortening ##
-### Instructions to installing and running using docker###
+### Instructions to installing and running using docker ###
 
 * Download the project form git download
 
@@ -23,8 +23,14 @@
 
 ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.41.46.png)
 
-* Iuput the URL you want to shortern in text box
+* Result for given URL is as follows
 
-![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.06.27.png)
+![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.44.19.png)
 
-* On cliking get short url button it will give shortened URL
+* When you give URL in wrong format, it gives message invalid url and correct format of URL
+
+![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.04.13.png)
+
+![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.04.45.png)
+
+
