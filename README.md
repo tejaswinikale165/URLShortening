@@ -10,4 +10,4 @@ $ docker-compose up
 
 Open localhost:8080/ to see endpoints. 
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.03.46.png)
