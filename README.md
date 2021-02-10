@@ -15,19 +15,19 @@
 
 ### Following are the screenshots of application ###
 
-* Application Startup page
+* **Application Startup page**
 
 ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.03.46.png)
 
-* Iuput the URL you want to shortern in text box
+* **Iuput the URL you want to shortern in text box**
 
 ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.41.46.png)
 
-* Result for given URL is as follows
+* **Result for given URL is as follows**
 
 ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.44.19.png)
 
-* When you give URL in wrong format, it gives message invalid url and correct format of URL
+* **When you give URL in wrong format, it gives message invalid url and correct format of URL**
 
 ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.04.13.png)
 
