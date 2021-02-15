@@ -2,7 +2,6 @@ package com.neueda.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -11,9 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.neueda.dao.URLServicesDao;
-import com.neueda.daoimpl.DBServicesDaoImpl;
 import com.neueda.daoimpl.URLServicesDaoImpl;
 
 /**
@@ -33,7 +32,16 @@ public class URLController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-
+		//out.print(request.getServerName());
+		
+		HttpSession session = request.getSession();
+		Integer userid =1;
+		if(session.getAttribute("userid")!= null)
+		{
+			userid=Integer.parseInt((String) session.getAttribute("userid"));
+		}
+		
+		
 		if("false".equals(request.getServletContext().getInitParameter("dbCheck")))
 		{
 			response.sendError(500,"Database issue");
@@ -46,7 +54,7 @@ public class URLController extends HttpServlet {
 		if(services.isValidURL(longURL)) {
 
 			try {
-				String shortURL=services.getShortenedURL(longURL);
+				String shortURL=services.getShortenedURL(longURL,userid);
 				if(shortURL==null)
 				{
 					
@@ -71,8 +79,9 @@ public class URLController extends HttpServlet {
 
 			} 
 			catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				request.setAttribute("errormsg", "Sorry, Internal Server Error: Try after sometime.");
+				RequestDispatcher rd =request.getRequestDispatcher("/error.jsp");
+				rd.forward(request, response);
 			}
 		}
 		else

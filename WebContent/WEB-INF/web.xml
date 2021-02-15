@@ -23,9 +23,11 @@
   </context-param>
   <context-param>
   <param-name>url</param-name>
-  <param-value>jdbc:mysql://neueda-main_db_1:3306/neueda</param-value>
+  <param-value>jdbc:mysql://neueda_db:3306/neueda</param-value>
   </context-param>
-  <error-page>
+
+ <error-page>
+
     <location>/error</location>
 </error-page>
 </web-app>

@@ -1,7 +1,6 @@
 package com.neueda.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.neueda.dao.URLServicesDao;
-import com.neueda.daoimpl.DBServicesDaoImpl;
 import com.neueda.daoimpl.URLServicesDaoImpl;
 
 /**
@@ -33,7 +31,6 @@ public class URLRdirectController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path=request.getServletPath();
 		URLServicesDao services=new URLServicesDaoImpl();
-		PrintWriter out = response.getWriter();
 		if("false".equals(request.getServletContext().getInitParameter("dbCheck")))
 		{
 			response.sendError(500,"Database issue");
@@ -41,12 +38,16 @@ public class URLRdirectController extends HttpServlet {
 		}
 		try {
 			String longURL = services.getLongerURL(path.substring(1));
-			System.out.println("Controller:"+longURL);
-			
+			if(longURL.equals("Not Found"))
+			{
+				response.sendError(404,"Invalid URL request. Check the URL");
+				return;
+			}
 			response.sendRedirect(longURL);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			request.setAttribute("errormsg", "Sorry, Internal Server Error: Try after sometime.");
+			RequestDispatcher rd =request.getRequestDispatcher("/error.jsp");
+			rd.forward(request, response);
 		}
 		
 		

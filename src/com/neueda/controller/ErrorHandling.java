@@ -27,7 +27,7 @@ public class ErrorHandling extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
-		
+		System.out.println("status"+statusCode);
 		        if(statusCode==401 || statusCode==403)
 		        {
 		        
@@ -36,7 +36,7 @@ public class ErrorHandling extends HttpServlet {
 		        
 		        else if(statusCode==404)
 		        {
-		        request.setAttribute("errormsg", "Sorry, the page you requested were not found.");
+		        request.setAttribute("errormsg", request.getAttribute("javax.servlet.error.message"));
 		        }
 		        
 		        else if(statusCode==500)
@@ -46,7 +46,7 @@ public class ErrorHandling extends HttpServlet {
 		        
 		        //Default msg for all exception except above mentioned exceptions.
 		        else {
-		        request.setAttribute("errormsg","Sorry, Error: "+request.getAttribute("javax.servlet.error.message")+" occured.");
+		        request.setAttribute("errormsg", "Sorry, Internal Server Error: Try after sometime.");
 		        }
 
 		        request.getRequestDispatcher("/error.jsp").forward(request, response);

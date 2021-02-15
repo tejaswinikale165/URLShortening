@@ -13,19 +13,25 @@ public class URLServicesDaoImpl implements URLServicesDao {
 	public URLServicesDaoImpl() {
 		dbServices=new DBServicesDaoImpl();
 	}
+	//Get insert url in database and get generated id encode it to create short url
 	@Override
-	public String getShortenedURL(String longURL) throws SQLException {
-		String id=dbServices.insertURL(longURL);
-		return encode(id);
+	public String getShortenedURL(String longURL,int userId) throws SQLException {
+		int id=dbServices.insertURL(longURL,userId);
+		if(id!=0) {
+		return encode(String.valueOf(id));}
+		else return "NOT INSERTED";
 	}
 
+	//Get long url from database
 	@Override
 	public String getLongerURL(String encodedId)  throws SQLException{
+		
 		String id=decode(encodedId);
 		return dbServices.getLongerURL(id);
+		
 	}
 	
-	
+	//Validation of url
 	public boolean isValidURL(String url)
     {
        
@@ -46,6 +52,7 @@ public class URLServicesDaoImpl implements URLServicesDao {
         return m.matches();
     }
 	
+	//Encode the id
 	public String encode(String id)
 	{
 		Base64.Encoder encoder = Base64.getEncoder();
@@ -53,10 +60,15 @@ public class URLServicesDaoImpl implements URLServicesDao {
 		        id.getBytes(StandardCharsets.UTF_8) );
 	}
 	
+	//Decode the id 
 	public String decode(String encodedId)
-	{
+	{  try {
 		Base64.Decoder decoder = Base64.getDecoder();
 		byte[] decodedByteArray = decoder.decode(encodedId);
-		return new String(decodedByteArray);
+		return new String(decodedByteArray);}
+		catch (IllegalArgumentException ia)
+		{
+			return "Not Found";
+		}
 	}
 }
