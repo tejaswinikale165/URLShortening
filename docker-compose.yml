@@ -11,6 +11,11 @@ services:
                   
             ports:
                         - 3306:3306
+            volumes: 
+                        - my-db:/var/lib/mysql
+                        - ./init/:/docker-entrypoint-initdb.d/:ro
+                        
+
          urlshort:
              build: 
                         context: .
@@ -22,4 +27,5 @@ services:
                          - db
              ports: 
                          - 8080:8080
-
+volumes:
+         my-db:

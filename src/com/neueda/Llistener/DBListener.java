@@ -23,7 +23,7 @@ public class DBListener implements ServletContextListener{
 		
 		try {
 			setConnection(username,password,dbdriver,url);
-			executeInitialScript();
+			//executeInitialScript();
 			System.out.println("------dconne------------- "+connection);
 			dbCheck="true";
 			context.setInitParameter("dbCheck", dbCheck);
