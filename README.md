@@ -19,18 +19,16 @@
 
 >> ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/startpage.png)
 
-* **Iuput the URL you want to shortern in text box**
+* **Input the URL you want to shortern in text box and see the result**
 
 >> ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/ceratelinkwithnormaluser.png)
 
-* **Result for given URL is as follows**
+* **When you click on analysis tab without logging in it ask to login**
 
 >> ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/ifnotloggedinanalysis.png)
 
-* **When you give URL in wrong format, it gives message invalid url and correct format of URL**
+* **After Login it will give analysis of links created **
 
 >> ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/anlysis.png)
-
->> ![alt text](https://github.com/tejaswinikale165/Test-pic-for-url-short/blob/main/Screenshot%202021-02-10%20at%2001.04.45.png)
 
 
