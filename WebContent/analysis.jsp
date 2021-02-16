@@ -180,7 +180,7 @@ overflow: hidden;
 <body>
 
 <div class="company">
- <h2>Neueda </h2>
+ <h2>Company </h2>
 </div>
 <div class="navbar">
 

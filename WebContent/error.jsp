@@ -48,7 +48,7 @@ body {
 </head>
 <body>
 <div class="company">
- <h2>Neueda </h2>
+ <h2>Company </h2>
 </div>
 <div class="heading"><h3><center><%out.print(request.getAttribute("errormsg")); %></center></h3></div>
 

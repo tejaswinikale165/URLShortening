@@ -229,7 +229,7 @@ span.psw {
 </head>
 <body>
 	<div class="company">
-		<h2>Neueda </h2>
+		<h2>Company </h2>
 	</div>
 	<div class="navbar">
 		<a class="active" href="/index.jsp">URL Shortening</a>
